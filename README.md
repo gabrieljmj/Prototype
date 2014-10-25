@@ -5,6 +5,10 @@ This library allows you to create prototypes like in JavaScript.
 ##Creating an object
 Objects are created with functions. These functions will return an object. All objects are registred on a class called ```\Gabrieljmj\Prototype\Prototype```.
 ```php
+require_one 'autoload.php';
+
+use Gabrieljmj\Prototype\Prototype;
+
 function Person() {
     return Prototype::getInstance()->prot('Person');
 }
