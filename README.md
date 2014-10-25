@@ -20,12 +20,12 @@ Person()->on = 1;
 Person()->setName = function ($name) {
     global $self;
     $self->name = $name;
-}
+};
 
 Person()->getName = function() {
     global $self;
     return $self->getName();
-}
+};
 ```
 So you can instance this and execute the methods and get the propeties:
 ```php
