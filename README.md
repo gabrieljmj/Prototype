@@ -38,7 +38,7 @@ $user2->setName('Gretel');
 echo $user1->getName() . ' and ' . $user2->getName(); //Hansel and Gretel
 ```
 ##Extending
-The extending is almost the same thing that JavaScript. Just set the property ```$prototype```:
+The extending is almost the same of JavaScript. Just set the property ```$prototype```:
 ```php
 function Employee() {
     return Prototype::getInstance()->prot('Employee');
