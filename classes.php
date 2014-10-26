@@ -1,40 +1,4 @@
-<?php
-namespace Gabrieljmj\Prototype\Autoload\Autoloadable;
-
-use Gabrieljmj\Prototype\Autoload\Autoloadable\AutoloadableInterface;
-
-class StandardAutoloadable implements AutoloadableInterface
-{
-    /**
-     * Files path
-     *
-     * @var string
-    */
-    private $path;
-
-    /**
-     * @var string
-    */
-    public function __construct($path)
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * Returns the function to autoload
-     *
-     * @return callable
-    */
-    public function getCallable()
-    {
-        return function ($className) {
-            global $class;
-
-            $class = $className;
-            $file =  $this->path . DIRECTORY_SEPARATOR . $class . '.php';
-
-            if (!file_exists($file)) {
-                $code = 'class ' . $class . '
+<?php class Person
                 {
                     public function __construct()
                     {
@@ -82,11 +46,4 @@ class StandardAutoloadable implements AutoloadableInterface
 
                         return call_user_func_array($methods[$method], $args);
                     }
-                }';
-                eval($code);
-            } else {
-                require_once $this->path . DIRECTORY_SEPARATOR . $class . '.php';
-            }
-        };
-    }
-}
+                }

@@ -4,5 +4,5 @@ require_once 'src/Gabrieljmj/Prototype/Autoload/Autoloadable/AutoloadableInterfa
 require_once 'src/Gabrieljmj/Prototype/Autoload/Autoloadable/StandardAutoloadable.php';
 
 $autoloader = new Gabrieljmj\Prototype\Autoload\Autoloader();
-$autoloadable = new Gabrieljmj\Prototype\Autoload\Autoloadable\StandardAutoloadable('src');
+$autoloadable = new Gabrieljmj\Prototype\Autoload\Autoloadable\StandardAutoloadable('src', 'classes.php');
 $autoloader->register($autoloadable);
