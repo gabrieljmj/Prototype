@@ -28,74 +28,11 @@ class StandardAutoloadable implements AutoloadableInterface
     public function getCallable()
     {
         return function ($className) {
-            global $class;
+            $file = $this->path . DIRECTORY_SEPARATOR . $className . '.php';
 
-            $class = $className;
-            $file =  $this->path . DIRECTORY_SEPARATOR . $class . '.php';
-
-            if (!file_exists($file)) {
-                $instance = call_user_func($className);
-                $vars = get_object_vars($instance);
-                $extends = null;
-                foreach ($vars as $property => $value) {
-                    if ($property == "prototype") {
-                        $extends = ' extends ' . get_class($value);
-                    }
-                }
-
-                $code = 'class ' . $className . $extends . '
-                {
-                    public function __construct()
-                    {
-                        global $class;
-                        global $methods;
-
-                        $instance = call_user_func($class);
-                        $vars = get_object_vars($instance);
-
-                        if (isset($vars["prototype"])) {
-                            $prototype = $vars["prototype"];
-                            unset($vars["prototype"]);
-                            $vars["prototype"] = $prototype;
-                        }
-
-                        foreach ($vars as $property => $value) {
-                            if ($property != "prototype") {
-                                if (is_callable($value)) {
-                                    $methods[$property] = $value;
-                                } else {
-                                    $this->{$property} = $value;
-                                }
-                            } else {
-                                foreach (get_object_vars($value) as $property2 => $value2) {
-                                    if (is_callable($value2)) {
-                                        if (!isset($methods[$property2])) {
-                                            $methods[$property2] = $value2;
-                                        }
-                                    } else {
-                                        if (!isset($this->{$property2})) {
-                                            $this->{$property2} = $value2;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    public function __call($method, $args)
-                    {
-                        global $methods;
-                        global $self;
-
-                        $self = $this;
-
-                        return call_user_func_array($methods[$method], $args);
-                    }
-                }';
-                eval($code);
-            } else {
-                require_once $this->path . DIRECTORY_SEPARATOR . $class . '.php';
-            }
+            if (file_exists($file)) {
+                require_once $file;
+            }        
         };
     }
 }
