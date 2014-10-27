@@ -1,5 +1,7 @@
 Gabrieljmj\Prototype
 ====================
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/?branch=master)
+
 This library allows you to create prototypes almost like in JavaScript.
 
 ##1 Creating an object
