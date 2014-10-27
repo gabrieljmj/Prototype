@@ -34,7 +34,16 @@ class StandardAutoloadable implements AutoloadableInterface
             $file =  $this->path . DIRECTORY_SEPARATOR . $class . '.php';
 
             if (!file_exists($file)) {
-                $code = 'class ' . $class . '
+                $instance = call_user_func($className);
+                $vars = get_object_vars($instance);
+                $extends = null;
+                foreach ($vars as $property => $value) {
+                    if ($property == "prototype") {
+                        $extends = ' extends ' . get_class($value);
+                    }
+                }
+
+                $code = 'class ' . $className . $extends . '
                 {
                     public function __construct()
                     {
