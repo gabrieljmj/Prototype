@@ -4,7 +4,7 @@ Gabrieljmj\Prototype
 
 This library allows you to create prototypes almost like in JavaScript.
 
-##1 Creating an object
+##1. Creating an object
 Objects are created with functions. These functions will return an object. All objects are registred on a class called ```\Gabrieljmj\Prototype\Prototype```.
 ```php
 require_once 'autoload.php';
@@ -39,7 +39,7 @@ $user2->setName('Gretel');
 
 echo $user1->getName() . ' and ' . $user2->getName(); //Hansel and Gretel
 ```
-##2 Extending
+##2. Extending
 The extending is almost the same of JavaScript. Just set the property ```$prototype```:
 ```php
 function Employee() {
@@ -65,7 +65,7 @@ $employee->setJobTitle('Developer');
 echo 'Hi! My name is ' . $employee->getName() . ' and I work as ' . $employee->getJobTitle() . '.';
 //Hi! My name is Jhon and I work as Developer.
 ```
-###2.1 Instanceof
+###2.1. Instanceof
 ```php
 var_dump($person instanceof Employee); //bool(false)
 var_dump($employee instanceof Person); //bool(true)
