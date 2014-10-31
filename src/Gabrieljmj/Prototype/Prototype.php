@@ -41,4 +41,12 @@ class Prototype
 
         return $this->collection[$name];
     }
+
+    private function __construct()
+    {
+    }
+
+    private function __clone()
+    {
+    }
 }
