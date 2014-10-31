@@ -4,6 +4,10 @@ Gabrieljmj\Prototype
 
 This library allows you to create prototypes almost like in JavaScript.
 
+##Tests
+Sorry, I know that it is wrong, but I left the tests to do after the library. 
+Why? Because I am having problems to write them.
+
 ##1. Creating an object
 Objects are created with functions. These functions will return an object. All objects are registred on a class called ```\Gabrieljmj\Prototype\Prototype```.
 ```php
