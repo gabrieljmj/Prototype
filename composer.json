@@ -5,6 +5,7 @@
         "email": "gamjj74@hotmail.com",
         "link": "http://github.com/gabrieljmj"
     },
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
     },
