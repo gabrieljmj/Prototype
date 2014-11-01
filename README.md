@@ -1,6 +1,6 @@
 Gabrieljmj\Prototype
 ====================
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/?branch=master)
+[![Total Downloads](https://poser.pugx.org/gabrieljmj/prototype/downloads.png)](https://packagist.org/packages/gabrieljmj/prototype) [![Latest Unstable Version](https://poser.pugx.org/gabrieljmj/prototype/v/unstable.png)](https://packagist.org/packages/gabrieljmj/prototype) [![License](https://poser.pugx.org/gabrieljmj/prototype/license.png)](https://packagist.org/packages/gabrieljmj/prototype) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GabrielJMJ/Prototype/?branch=master)
 
 This library allows you to create prototypes almost like in JavaScript.
 
